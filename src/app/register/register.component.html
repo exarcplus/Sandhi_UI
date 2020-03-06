@@ -1,0 +1,433 @@
+<div class="row1">
+
+  <div class="column1">
+    <img src="assets/download (1).jpg" width="100%">
+</div>
+
+<div class="column1" id="contents">
+
+ 
+    <div class="row3" style="padding-top: 5%;">
+      <div class="column3" style="padding-left: 27%;text-align: left;">
+        <strong id="wb" >Welcome Back!</strong> <br>
+    
+        <i>Please signup into your account</i> <br><br>
+      </div>
+      <div class="column3" style="padding-right: 15%;" >
+       <img src="assets/SandhiBaseLogo.jpg" style="width: 60px;">
+      </div>
+    </div>
+
+
+
+
+    <form style="text-align: center; padding-left: 27%;" [formGroup]="loginForm" (ngSubmit)="onFormSubmit(loginForm.value)">
+
+
+          
+
+      <div class="form-group" style="width:60%;">
+        
+    <input  type="email" class="form-control"  placeholder="Username *" formControlName="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" >
+    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+      <div *ngIf="f.username.errors.required">Username is required</div>
+      <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+    </div>
+</div>
+ 
+
+
+
+  <div class="form-group" style="width:60%;">
+    
+    <input type="text" class="form-control" id="first_name" placeholder="First name *" formControlName="first_name" [ngClass]="{ 'is-invalid': submitted && f.first_name.errors }">
+    <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
+      <div *ngIf="f.first_name.errors.required">First name  is required</div>
+    </div>
+  </div>
+
+
+  <div class="form-group" style="width:60%;">
+   
+    <input type="text" class="form-control" id="last_name" placeholder="Last name *" formControlName="last_name" [ngClass]="{ 'is-invalid': submitted && f.last_name.errors }">
+    <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
+      <div *ngIf="f.last_name.errors.required">Last name is required</div>
+    </div>
+  </div>
+
+  <div class="form-group" style="width:60%;">
+    
+    <input type="email" class="form-control" id="email" placeholder="E-mail *" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+      <div *ngIf="f.email.errors.required">email is required</div>
+      <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+    </div>
+  </div>
+
+
+  
+
+
+  <div class="form-group" style="width:60%;">
+
+
+    <select  formControlName="organisation" id="organisation" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.organisation.errors }">
+        <option value=""> Organisation *</option>
+        <option value="organisation-1">organisation-1</option>
+        <option value="organisation-2">organisation-2</option>
+        <option value="organisation-3">organisation-3</option>
+        <option value="organisation-4">organisation-4</option>
+    </select>
+
+    <div *ngIf="submitted && f.organisation.errors" class="invalid-feedback">
+      <div *ngIf="f.organisation.errors.required">organisation is required</div>
+    </div>
+  </div>
+
+
+
+  <div class="form-group" style="width:60%;">
+   
+    
+    <select formControlName="profession" id="profession" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.profession.errors }">
+        <option value="">Profession *</option>
+        <option value="profession-1">profession-1</option>
+        <option value="profession-2">profession-2</option>
+        <option value="profession-3">profession-3</option>
+        <option value="profession-4">profession-4</option>
+    </select>
+
+    <div *ngIf="submitted && f.profession.errors" class="invalid-feedback">
+      <div *ngIf="f.profession.errors.required">profession is required</div>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="form-group" style="width:60%;">
+ 
+    <input type="password" formControlName="password1" class="form-control" id="password1" placeholder="Password *" [ngClass]="{ 'is-invalid': submitted && f.password1.errors }">
+    <div *ngIf="submitted && f.password1.errors" class="invalid-feedback">
+      <div *ngIf="f.password1.errors.required">Password is required</div>
+      <div *ngIf="f.password1.errors.minlength">Password must be at least 8 characters</div>
+    </div>
+  </div>
+
+  <div class="form-group" style="width:60%;">
+   
+    <input type="password" formControlName="password2" class="form-control" id="password2" placeholder="Confirm Password *" [ngClass]="{ 'is-invalid': submitted && f.password2.errors }">
+    <div *ngIf="submitted && f.password2.errors" class="invalid-feedback">
+      <div *ngIf="f.password2.errors.required">Confirm Password is required</div>
+      
+       <div *ngIf="f.password2.errors.mustMatch">Passwords must match</div>
+    </div>
+  </div>
+
+  <br>
+  
+      <div class="row2" style="padding:  0%; padding-top: 3%; padding-left: 0%;padding-right: 20%;">
+        <div class="column2" style="height: 5px;padding-bottom: 0%;padding-left: 0%;padding-right: 25%; ">
+          <re-captcha style="width: 50%;height: 50%;" (resolved)="resolved($event)" siteKey="6LeXt9wUAAAAADSp7ps1uDPWqhp9znXhxNlKwxOV"></re-captcha>
+        </div>
+
+        <div class="column2" style="padding-top: 3%;padding-left: 0%; padding-right: 15%;">
+
+          <button color="primary"   class="login-button">SIGNUP</button>
+          
+        </div>
+      </div>
+  
+
+
+ <!-- <button [disabled]="loginForm1" class="btn btn-primary">SIGNUP</button>  -->
+
+  
+</form>
+
+
+
+<!--
+    <div class="row">
+      <div class="col s12 m6">
+        
+
+<form class="col s12 white" #userRegistrationForm="ngForm" (ngSubmit)="OnSubmit(userRegistrationForm)">
+
+  <div class="row">
+
+    <div class="input-field col s6">
+      <input class="validate" type="text" name="first_name" #first_name="ngModel" [(ngModel)]="user.first_name" required>
+      <label data-error="Required field">First Name</label>
+    </div>
+
+    
+    <div class="input-field col s6">
+      <input type="text" name="last_name" #last_name="ngModel" [(ngModel)]="user.last_name">
+      <label>last Name</label>
+    </div>
+
+    <div class="input-field col s6">
+      <input type="password" name="password1" #password1="ngModel" [(ngModel)]="user.password1" required minlength="8">
+      <label [attr.data-error]="password1.errors!=null?(Password.errors.required?'Required field!':'Minimum 8 char Required'):''">Password</label>
+    </div>
+
+    <div class="input-field col s6">
+      <input type="password" name="password2" #password2="ngModel" [(ngModel)]="user.password2">
+      <label>confirm password</label>
+    </div>
+
+  </div>
+
+  <div class="row">
+  <div class="input-field col s6">
+    <button class="btn-large btnn-submit" type="submit"> submit</button>
+  </div>
+</div>
+
+</form></div></div> -->
+
+
+
+    <!--
+<form [formGroup]="registrationForm">
+
+  <div class="form-group">
+    <label>First Name</label>
+    <input [class.is-invalid]="registrationForm.get('first_name').invalid && registrationForm.get('first_name').touched" formControlName="first_name" type="text" class="form-control">
+
+  /* <small [class.d-none]="registrationForm.get('first_name').valid || registrationForm.get('first_name').untouched" class="text-danger"> First name is required</small>  */
+
+    <div *ngIf="registrationForm.get('first_name').invalid && registrationForm.get('first_name').touched">
+
+      <small  *ngIf="registrationForm.get('first_name').errors ?.required" class="text-danger">First name is required</small>
+
+      <small  *ngIf="registrationForm.get('first_name').errors ?.minLength" class="text-danger"> Minimum 3 character  is required</small>
+
+    </div> 
+
+    
+
+  </div> 
+
+  <div class="form-group">
+    <label>Password</label>
+    <input formControlName="password1" type="text" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label>Confirm Password</label>
+    <input [class.is-invalid]="registrationForm.errors ?.misMatch" formControlName="password2" type="text" class="form-control">
+
+
+    
+    <small class="text-danger" *ngIf="registrationForm.errors ?.misMatch"> Password must be same</small>
+
+  </div>
+  <button class="btn btn-primary" type="submit">Register</button>
+
+</form>
+
+-->
+    
+<!--
+<form style="text-align: center;">
+ 
+  <mat-form-field>
+
+  <input
+  
+  matInput
+  placeholder="First Name"
+  required
+  name="username"
+  ngModel
+  #username="ngModel">
+  <mat-icon matSuffix>perm_identity</mat-icon>
+  <mat-error
+  *ngIf="username.invalid">
+  Username is required
+  </mat-error>
+  </mat-form-field> &nbsp;&nbsp;
+
+
+  <mat-form-field>
+
+    <input
+    matInput
+    placeholder="Middle Name"
+    
+    name="middlename"
+    ngModel
+    #middlename="ngModel">
+    <mat-icon matSuffix>perm_identity</mat-icon>
+
+    </mat-form-field> <br>
+
+    <mat-form-field>
+
+      <input
+      matInput
+      placeholder="Last Name"
+      required
+      name="lastname"
+      ngModel
+      #lastname="ngModel">
+      <mat-icon matSuffix>perm_identity</mat-icon>
+      <mat-error
+      *ngIf="lastname.invalid">
+      Lastname is required
+      </mat-error>
+    
+      </mat-form-field> &nbsp;&nbsp;
+
+
+  <mat-form-field>
+    
+  <input
+  matInput
+  placeholder="Email"
+  required
+  name="email"
+  ngModel
+  #email="ngModel">
+  <mat-error *ngIf="email.invalid">Email is required</mat-error>
+  <mat-icon matSuffix>email</mat-icon>
+
+  </mat-form-field>  <br>
+
+
+  <mat-form-field>
+  <input
+  matInput
+  placeholder="Password"
+  type="password"
+  required
+  minlength="8"
+  name="password"
+  ngModel
+  #password="ngModel">
+  <mat-error
+  *ngIf="password.errors && password.errors.required">
+  Password is required
+  </mat-error>
+  <mat-error
+  *ngIf="password.errors && password.errors.minlength">
+  Password must be of length 8
+  </mat-error>
+  <mat-icon matSuffix>lock</mat-icon>
+  
+  </mat-form-field> &nbsp;&nbsp;
+
+
+  <mat-form-field>
+  <input
+  compare="password"
+  matInput
+  placeholder="Confirm Password"
+  type="password"
+  required
+  minlength="8"
+  name="repassword"
+  ngModel
+  #repassword="ngModel">
+  <mat-error
+  *ngIf="repassword.errors && repassword.errors.required">
+  Re-Enter Password is required
+  </mat-error>
+  <mat-icon matSuffix>lock</mat-icon>
+  </mat-form-field> <br>
+
+  <mat-form-field style="width:43%;">
+
+    <input
+    matInput
+    placeholder="Location"
+    required
+    name="locationname"
+    ngModel
+    #locationname="ngModel">
+    <mat-icon matSuffix>home</mat-icon>
+    <mat-error
+    *ngIf="locationname.invalid">
+    Location name is required
+    </mat-error>
+  
+    </mat-form-field> <br>
+
+
+    <mat-form-field>
+      <mat-label>Organisation</mat-label>
+      <select matNativeControl>
+        <option value="v"></option>
+        <option value="s">Organisation1</option>
+        <option value="m">Organisation2</option>
+        <option value="a">Organisation3</option>
+      </select>
+    </mat-form-field> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    
+
+    <mat-form-field>
+      <mat-label>Profession</mat-label>
+      <select matNativeControl>
+        <option value="v"></option>
+        <option value="s">Profession1</option>
+        <option value="m">Profession2</option>
+        <option value="a">Profession3</option>
+      </select>
+    </mat-form-field>
+
+<br>
+
+  
+  <mat-form-field style="width:43%;">
+    <mat-label>Domains</mat-label>
+    <select matNativeControl>
+      <option value="v"></option>
+      <option value="s">Domain1 <mat-icon matSuffix>clear</mat-icon></option>
+      <option value="m">Domain2</option>
+      <option value="a">Domain3</option>
+    </select>
+  </mat-form-field>
+
+ 
+/ ** <-- ->
+
+  <div class="g-recaptcha" data-sitekey="6Ldbdg0TAAAAAI7KAf72Q6uagbWzWecTeBWmrCpJ">  </div>
+    
+<br>
+
+    <div class="row2" style="padding:  15%; padding-top: 3%;">
+      <div class="column2" style="height: 10px;padding-bottom: 0%;padding-left: 10%;padding-right: 20%; ">
+        <re-captcha (resolved)="resolved($event)" siteKey="6LeXt9wUAAAAADSp7ps1uDPWqhp9znXhxNlKwxOV"></re-captcha>
+      </div>
+      <div class="column2" style="padding-top: 3%;padding-left: 4%;">
+        <button
+        mat-raised-button
+        color="primary"
+        class="login-button">
+        SUBMIT
+        </button>
+      </div>
+    </div> 
+ 
+      <re-captcha (resolved)="resolved($event)" siteKey="6LeXt9wUAAAAADSp7ps1uDPWqhp9znXhxNlKwxOV"></re-captcha>
+   
+   
+
+     
+    
+    
+    <button
+    mat-raised-button
+    color="primary"
+    class="login-button">
+    SUBMIT
+    </button>
+
+
+  </form>  -->
+</div>
+</div>

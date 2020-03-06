@@ -1,0 +1,16 @@
+#wb {
+    color: rgb(29, 29, 151);
+}
+#contents {
+    text-align: center;
+}
+
+
+.login-button {
+    
+    height: 37px;
+    width: 130;
+   
+    background-color: rgb(3, 29, 51);
+    color: aliceblue;
+  }

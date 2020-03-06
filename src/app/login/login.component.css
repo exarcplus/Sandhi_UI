@@ -1,0 +1,80 @@
+.strong{
+    color: blue;
+}
+
+#wb {
+    color: blue;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  .login-button {
+    margin-top: 25px;
+    display: block;
+    width: 44%;
+    margin: 25px auto;
+    background-color: rgb(70, 98, 221);
+    color: white;
+    padding: 10px;
+  }
+
+  .signup-button {
+    margin-top: 25px;
+    display: block;
+    width: 44%;
+    margin: 25px auto;
+    padding: 2px;
+    background-color: rgb(3, 29, 51);
+    color: aliceblue;
+  }
+
+ 
+  .login-page {
+    top: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: #303F9F;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+  }
+
+ 
+  
+  mat-card {
+    width: 30%;
+    margin: 10% auto;
+    border-radius: 8px;
+  }
+  mat-form-field, mat-checkbox {
+    width: 80%;
+    display: block;
+    margin: auto;
+  }
+  mat-card-content {
+    margin-top: 20px;
+  }
+  
+  #wb {
+    color: rgb(29, 29, 151);
+}
+#contents {
+    text-align: center;
+}
+
