@@ -1,3 +1,19 @@
+.jumbotron1 {
+  
+  
+  overflow: hidden;
+  position: fixed;
+  background-color: lightblue;
+  bottom: 0;
+
+  width: 100%;
+}
+
+.jumbotron1 a:hover {
+  background-color:white;
+  color: black;
+}
+
 /* Tool bar */
 
 .spacer {
@@ -39,12 +55,15 @@
   position: fixed;
   bottom: 0;
   width: 100%;
+  color: whitesmoke;
+  text-align: center;
+  
 }
 
 
 /* Style the links inside the navigation bar */
 .navbar2 a {
-  float: left;
+ /* float: left; */
   display: block;
   color: #f2f2f2;
 /* text-align: center; */
@@ -65,3 +84,5 @@
   background-color: #4CAF50;
   color: white;
 }
+
+

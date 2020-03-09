@@ -2,9 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup} from '@angular/forms';
 import {Register} from '../register'; 
 import { MustMatch } from '../_helpers/must-match.validator'; 
-import { LoginService } from '../login.service';    
+import { LoginService } from '../login.service';  
+import { Router } from '@angular/router'; 
+
 
 import { NgForm, } from '@angular/forms';
+import { from } from 'rxjs';
 
 
 @Component({
@@ -34,8 +37,10 @@ export class RegisterComponent implements OnInit {
   loading = false;
   submitted = false;
   
+ 
+  
   massage:string;    
-  constructor(private formbulider: FormBuilder,private loginService:LoginService) { }    
+  constructor(private router:Router,private formbulider: FormBuilder,private loginService:LoginService) { }    
     
   ngOnInit() {    
 
@@ -69,26 +74,36 @@ export class RegisterComponent implements OnInit {
    onFormSubmit()    
   {    
     const user = this.loginForm.value;    
-    this.Createuser(user);   
-   this.submitted = true;
-    // stop here if form is invalid
+    this.Createuser(user);  
+    this.submitted = true 
+
+ 
+ 
+     // stop here if form is invalid
     if (this.loginForm.invalid) {
-     return;   } 
+      return;
+      }
+
+
+    
+     
   }    
   Createuser(register:Register)    
   {    
   this.loginService.signup(register).subscribe(    
-    ()=>    
+    () =>    
     {    
       this.data = true;    
       this.massage = 'Data saved Successfully';    
       this.loginForm.reset();    
     });    
-  }    
+
+  }   
+
+
+  
 
  
 
-
- 
 
 }

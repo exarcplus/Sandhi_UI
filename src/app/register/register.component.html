@@ -24,16 +24,15 @@
     <form style="text-align: center; padding-left: 27%;" [formGroup]="loginForm" (ngSubmit)="onFormSubmit(loginForm.value)">
 
 
-          
-
-      <div class="form-group" style="width:60%;">
+  <div class="form-group" style="width:60%;">
         
-    <input  type="email" class="form-control"  placeholder="Username *" formControlName="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" >
+    <input  type="email" class="form-control" ng-unique="{key: 'users', property: 'username'}" placeholder="Username *" formControlName="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" >
     <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
       <div *ngIf="f.username.errors.required">Username is required</div>
       <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+      
     </div>
-</div>
+  </div>
  
 
 
@@ -66,39 +65,43 @@
 
 
   
+  <div class="row3" style="padding-top: 0%; padding-right: 30%;">
+    <div class="column3" style="padding-left: 0%;text-align: left;">
 
+                  <div class="form-group" style="width:70%;" >
+                
 
-  <div class="form-group" style="width:60%;">
+                    <select  formControlName="organisation" id="organisation" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.organisation.errors }">
+                        <option value=""> Organisation *</option>
+                        <option value="organisation-1">organisation-1</option>
+                        <option value="organisation-2">organisation-2</option>
+                        <option value="organisation-3">organisation-3</option>
+                        <option value="organisation-4">organisation-4</option>
+                    </select>
 
+                    <div *ngIf="submitted && f.organisation.errors" class="invalid-feedback">
+                      <div *ngIf="f.organisation.errors.required">organisation is required</div>
+                    </div>
+                  </div>
+    </div> 
 
-    <select  formControlName="organisation" id="organisation" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.organisation.errors }">
-        <option value=""> Organisation *</option>
-        <option value="organisation-1">organisation-1</option>
-        <option value="organisation-2">organisation-2</option>
-        <option value="organisation-3">organisation-3</option>
-        <option value="organisation-4">organisation-4</option>
-    </select>
+                
+    <div class="column3" style="padding-left: 0%; text-align: left;" >
+                <div class="form-group" style="width:70%;" >
+                  
+                   
+                   <select formControlName="profession" id="profession" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.profession.errors }">
+                       <option value="">Profession *</option>
+                       <option value="profession-1">profession-1</option>
+                       <option value="profession-2">profession-2</option>
+                       <option value="profession-3">profession-3</option>
+                       <option value="profession-4">profession-4</option>
+                   </select>
 
-    <div *ngIf="submitted && f.organisation.errors" class="invalid-feedback">
-      <div *ngIf="f.organisation.errors.required">organisation is required</div>
-    </div>
-  </div>
-
-
-
-  <div class="form-group" style="width:60%;">
-   
-    
-    <select formControlName="profession" id="profession" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.profession.errors }">
-        <option value="">Profession *</option>
-        <option value="profession-1">profession-1</option>
-        <option value="profession-2">profession-2</option>
-        <option value="profession-3">profession-3</option>
-        <option value="profession-4">profession-4</option>
-    </select>
-
-    <div *ngIf="submitted && f.profession.errors" class="invalid-feedback">
-      <div *ngIf="f.profession.errors.required">profession is required</div>
+                     <div *ngIf="submitted && f.profession.errors" class="invalid-feedback">
+                     <div *ngIf="f.profession.errors.required">profession is required</div>
+                     </div>
+                </div>
     </div>
   </div>
 

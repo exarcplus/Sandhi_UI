@@ -8,7 +8,9 @@
     
     
     <div class="column1" id="contents">
-    <form   style="text-align:center;">
+
+
+    <form name="form" (ngSubmit)="login()" #f="ngForm" style="text-align:center;">
     
     
     <br>
@@ -39,7 +41,7 @@
       <mat-error *ngIf="email.invalid">Email is required</mat-error>
       <mat-icon matSuffix>email</mat-icon>
     
-      </mat-form-field>
+      </mat-form-field> <br>
       
       <mat-form-field style="width:44%;" appearance="standard">
         <input
@@ -71,7 +73,7 @@
              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <a style="text-align: right;" href="#">Forgot password ?</a>
      
-        <button    class="login-button">  LOGIN </button>
+        <button type="submit"    class="login-button">  LOGIN </button>
                   
                   
                 

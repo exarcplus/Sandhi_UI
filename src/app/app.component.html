@@ -1,5 +1,6 @@
 
- <mat-toolbar class="navbar1"  style="text-align: center;background-color: rgb(137, 137, 230); position: fixed;padding-top: 0%;" ><img src="assets/SandhiBaseLogo.jpg" style="width: 60px;height: 50px;" mat-toolbar-fixed-top>
+ <mat-toolbar class="navbar1"  style="text-align: center;background-color: rgb(137, 137, 230); position: fixed;padding-top: 0%;" >
+  <img src="assets/SandhiBaseLogo.jpg" style="width: 60px;height: 50px;" >
 
   
   <a mat-button>HOME</a>
@@ -10,7 +11,10 @@
   <div class="spacer"></div>
   
   <a mat-button><a (click)="Login()" class=""><i class="fa fa-long-arrow-down" aria-hidden="true"></i> &nbsp;<A>LOGIN</A></a>&nbsp;/
-  <a (click)="Register()" class="">&nbsp;<i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;<A>SIGNUP</A></a></a>
+  <a (click)="Register()" class="">&nbsp;<i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;<A>SIGNUP</A></a>
+  <a mat-button  (click)="logout()"  class=""><i class="fa fa-sign-out" aria-hidden="true">&nbsp;</i>LOGOUT</a></a>
+
+  
 
 
   <a mat-button style="background-color: chocolate;">Try it Free</a>
@@ -19,22 +23,66 @@
 
 
 
-  
 
 
-  
+<br>
 
+<router-outlet></router-outlet>
 
+<br>
 
-  <br><br> 
+<div class="jumbotron1">
 
-  <!-- Down Navigation 
-  <div class="navbar2" style="float: left;">
-    <a href="#home" class="active">Home</a>
-    <a href="#news">News</a>
-    <a href="#contact">Contact</a>
+  <div class="jumbotron1" style="padding-top: 1%;">
+
+        <div class="row">
+          <div class="column" style="padding-left: 5%;">
+              <img src="assets/SandhiBaseLogo.jpg" style="width: 60px;height: 50px;" >
+              <h1></h1>      
+              <p>The Data integration platform that<br> converts public datasets into accessible,<br>
+              useable and actionable knowledge.</p>
+
+           </div> 
+
+              <div class="column" style="padding-left: 10%;">
+                      <a href="#">About</a><br>
+                      <a href="#">Platform sandhi</a><br>
+                      <a href="#">Browse Bharathi</a><br>
+                      <a href="#">Connect</a>
+                
+               </div>
+
+               <div class="column" style="padding-left: 10%;">
+                <a href="#">Terms & Policies</a><br><br>
+                <a href="#"> Settings & Privacy</a>
+                
+          
+              </div>
+
+              <div class="column" style="padding-left: 10%;">
+                <a href="#">Facebook</a><br>
+                <a href="#">Twitter</a><br>
+                <a href="#">Linkedin</a>
+             
+          
+              </div>
+
+              </div>
+            </div>
+
   </div>
--->
+  
+
+
+
+ <!-- Down Navigation   
+  <div class="navbar2">
+  
+  <p style="padding-top: 10px;">Copyright  2020 All rights reserved Sandhi.com</p>
+ 
+  </div>
+
+ -->
 
 
 
@@ -113,4 +161,4 @@
 -->
 
 
-<router-outlet></router-outlet>
+
